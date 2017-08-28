@@ -85,6 +85,14 @@ module Restforce
         api_get(url).body
       end
 
+      # Returns a Restforce::Collection if Restforce.configuration.mashify is true.
+      # Returns an Array of Hash for each record in the result if
+      # Restforce.configuration.mashify is false.
+      def run_report(id, include_details=true)
+        url = "/analytics/reports/#{id}?includeDetails=#{include_details}"
+        api_get(url).body
+      end
+
       # Public: Gets the IDs of sobjects of type [sobject]
       # which have been deleted between startDateTime and endDateTime.
       #

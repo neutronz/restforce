@@ -89,7 +89,7 @@ module Restforce
       # Returns an Array of Hash for each record in the result if
       # Restforce.configuration.mashify is false.
       def run_report(id, include_details=true)
-        url = "/analytics/reports/#{id}?includeDetails=#{include_details}"
+        url = "analytics/reports/#{id}?includeDetails=#{include_details}"
         api_get(url).body
       end
 
